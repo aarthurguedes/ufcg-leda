@@ -13,7 +13,7 @@ import java.util.Comparator;
 
 public class StudentBSTTest {
 
-	private BST<Integer> tree;
+	private SortComparatorBSTImpl<Integer> tree;
 	private BTNode<Integer> NIL = new BTNode<Integer>();
 
 	private void fillTree() {
@@ -161,6 +161,14 @@ public class StudentBSTTest {
 		fillTree();
 
 		Integer[] reverseOrder = new Integer[] { 232, 76, 67, 23, 12, 9, 6, 5, 2, 0, -34, -40 };
-		// assertArrayEquals(reverseOrder, tree.reverseOrder());
+		assertArrayEquals(reverseOrder, tree.reverseOrder());
+	}
+
+	@Test
+	public void testSort() {
+		fillTree();
+
+		assertArrayEquals(new Integer[]{-1, 0, 1, 2, 3, 4, 5, 6, 9},
+				tree.sort(new Integer[]{4, 5, 6, 9, 3, 1, 2, 0, -1}));
 	}
 }

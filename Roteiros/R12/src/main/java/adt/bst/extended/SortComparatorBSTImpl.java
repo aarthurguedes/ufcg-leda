@@ -48,6 +48,7 @@ public class SortComparatorBSTImpl<T extends Comparable<T>> extends BSTImpl<T> i
 	@Override
 	public T[] sort(T[] array) {
 		if (array != null) {
+			this.root = new BSTNode<>();
 
 			for (T element: array) {
 				insert(element);
